@@ -11,6 +11,20 @@ spring:
      resourceserver:
        jwt:
          issuer-uri: https://integrator-8708369.okta.com/oauth2/default
+resilience4j:
+  circuitbreaker:
+    instances:
+      productService:
+        sliding-window-size: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+  retry:
+    instances:
+      productService:
+        max-attempts: 3
+        wait-duration: 2s
 eureka:
  client:
    service-url:
