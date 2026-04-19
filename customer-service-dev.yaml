@@ -1,0 +1,12 @@
+spring:
+ datasource:
+   url: ${DB_URL:jdbc:mysql://localhost:3306/customerdb_dev?createDatabaseIfNotExist=true}
+   username: ${DB_USERNAME}
+   password: ${DB_PASSWORD}
+ jpa:
+   show-sql: true
+server:
+ port: 7001
+logging:
+ level:
+   root: DEBUG
