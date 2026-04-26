@@ -9,4 +9,5 @@ server:
  port: 7000
 logging:
  level:
-   root: DEBUG
+   root: ERROR
+   io.github.resilience4j: DEBUG
